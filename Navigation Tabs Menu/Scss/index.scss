@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2f363e;
+  .navigation {
+    position: relative;
+    width: 540px;
+    height: 120px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+      10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+      inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+      inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      position: relative;
+      list-style: none;
+      width: 80px;
+      margin: 0 5px;
+      &.active {
+        &::before{
+        background: #0f0;
+        box-shadow: 0 0 5px #0f0,
+        0 0 10px #0f0,
+        0 0 20px #0f0,
+        0 0 30px #0f0,
+        0 0 40px #0f0,
+        0 0 50px #0f0;
+        }
+        a {
+          .icon {
+            background: #29fd53;
+            color: #fff;
+            transform: translateY(-55px);
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+              rgba(255, 255, 255, 0.25), inset 2px 2px 3px,
+              inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+            transition-delay: 0s;
+
+            &::before {
+              transform: scale(1);
+            }
+          }
+          .text {
+            opacity: 1;
+            transform: translateY(10px);
+            transition-delay: 0.2s;
+          }
+        }
+      }
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        height: 5px;
+        background: #222;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        .icon {
+          position: absolute;
+          font-size: 1.75em;
+          width: 80px;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #aaa;
+          border-radius: 50%;
+          transition: 0.5s;
+          transition-delay: 0.2s;
+          &::before {
+            content: " ";
+            position: absolute;
+            inset: 10px;
+            background: #2f363e;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5),
+              rgba(255, 255, 255, 0.25), inset 2px 2px 3px,
+              inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+            transform: scale(0);
+            transition: 0.5s;
+          }
+        }
+        .text {
+          position: absolute;
+          font-size: 0.75em;
+          color: #2f363e;
+          opacity: 0;
+          border-radius: 15px;
+          transform: translateY(20px);
+          padding: 2px 10px;
+          background: #fff;
+          transition: 0.5s;
+          transition-delay: 0s;
+          box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+            inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+}
